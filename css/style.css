@@ -1,0 +1,69 @@
+/* Removing all orginial padding and margin */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* The button has a 2px black border, a height of 40px and a widith of 120px (INCLUDING THE 2PX BORDER) */
+.btn {
+  border: 2px solid #000;
+  height: 36px;
+  width: 116px;
+  background-color: #fff;
+  text-transform: uppercase;
+  margin: 7px;
+}
+
+/* The button should have a black background and white text when you hover over it */
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Utilizing flexbox for the squares to easily swap positions */
+.square-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Using an active class to swap the positions of the squares. Which utilizes flexbox row reverse */
+.square-container.active {
+  flex-direction: row-reverse;
+}
+
+/* The squares have a height of 500px and a width of 50% of the browser's width. Along with centering the veribage in the middle of the pinkish square (sqaure 1) */
+.square1 {
+  height: 500px;
+  width: 50%;
+  background-color: #f08080;
+  display: flex;
+  justify-content: center;
+}
+
+/* The squares have a height of 500px and a width of 50% of the browser's width. */
+.square2 {
+  height: 500px;
+  width: 50%;
+  background-color: #21b2aa;
+}
+
+/* Centering the veribage in the middle of the pinkish square (square 1)  */
+.center-words {
+  margin: auto 0;
+  text-align: center;
+  width: 200px;
+}
+
+/* On mobile and tablet devices, the squares should take up 100% of the browsers width and stack on top of each other */
+@media (max-width: 768px) and (min-width: 320px) {
+  .square1 {
+    width: 100%;
+  }
+  .square2 {
+    width: 100%;
+  }
+  /* Stacking squares on top of eachother */
+  .square-container.active {
+    flex-direction: column-reverse;
+  }
+}
